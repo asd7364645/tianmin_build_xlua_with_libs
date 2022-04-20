@@ -16,7 +16,6 @@
 #include "lauxlib.h"
 #include "lualib.h"
 #include "luajit.h"
-#include "i64lib.h"
 #include "lj_arch.h"
 
 #if LJ_TARGET_POSIX
