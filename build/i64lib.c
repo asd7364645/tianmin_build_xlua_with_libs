@@ -421,6 +421,13 @@ static int uint64_compare(lua_State* L) {
 	return 1;
 }
 
+static int int64_compare(lua_State* L) {
+	uint64_t lhs = lua_toint64(L, 1);
+	uint64_t rhs = lua_toint64(L, 2);
+	lua_pushinteger(L, lhs == rhs ? 0 : (lhs < rhs ? -1 : 1));
+	return 1;
+}
+
 static int uint64_divide(lua_State* L) {
 	uint64_t lhs = lua_touint64(L, 1);
 	uint64_t rhs = lua_touint64(L, 2);
@@ -494,6 +501,9 @@ LUALIB_API int luaopen_i64lib(lua_State* L)
 	lua_setfield(L, -2, "tostring");
 	
 	lua_pushcfunction(L, uint64_compare);
+	lua_setfield(L, -2, "ucompare");
+
+	lua_pushcfunction(L, int64_compare);
 	lua_setfield(L, -2, "compare");
 	
 	lua_pushcfunction(L, uint64_divide);
