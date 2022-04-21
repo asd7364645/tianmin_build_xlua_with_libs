@@ -500,11 +500,11 @@ LUALIB_API int luaopen_i64lib(lua_State* L)
 	lua_pushcfunction(L, uint64_tostring);
 	lua_setfield(L, -2, "tostring");
 	
-	lua_pushcfunction(L, uint64_compare);
-	lua_setfield(L, -2, "ucompare");
+	//lua_pushcfunction(L, uint64_compare);
+	//lua_setfield(L, -2, "ucompare");
 
-	lua_pushcfunction(L, int64_compare);
-	lua_setfield(L, -2, "compare");
+	//lua_pushcfunction(L, int64_compare);
+	//lua_setfield(L, -2, "compare");
 	
 	lua_pushcfunction(L, uint64_divide);
 	lua_setfield(L, -2, "divide");
